@@ -1,0 +1,18 @@
+
+/**
+ * 该方法只是用来把字符数字 转成公里的
+ */
+var filter = {
+  numberToFixed: function (value) {
+    console.log("filter "+value+","+typeof(value))
+    if(typeof(value) === "string"){
+      var result = parseFloat(value) /1000;
+      return result.toFixed(2);
+    }
+    return 0;
+  }
+}
+//导出对外暴露的属性
+module.exports = {
+  numberToFixed: filter.numberToFixed
+}

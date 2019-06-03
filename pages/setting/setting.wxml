@@ -1,0 +1,19 @@
+<view class="box">
+
+    <view class="buttonapprove" bindtap="{{CardValid=='true'?'':'certificate'}}">
+        <view class="realnametext">
+            实名认证
+        </view>
+        <view class="approvetext">
+            {{CardValidtext}}
+        </view>
+        <image class="icon-jiantou" src="../../image/go.png" background-size="contain" mode="" />
+    </view>
+
+
+    <view class="footdiv">
+        <view class="buttondiv">
+            <button class="button" bindtap="logout">退出登录</button>
+        </view>
+    </view>
+</view>

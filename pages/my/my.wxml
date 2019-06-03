@@ -1,0 +1,63 @@
+<view class="box">
+  <view class="loginMessage">
+    <view class="login" bindtap="login">
+      <image class="avator" src="../../image/avator.png" background-size="contain"></image>
+      <view class="status">{{login=='true'?userName:'注册/登录'}}</view>
+    </view>
+    <view class="certificate" bindtap="{{CardValid=='true'?'':'certificate'}}">
+      <view class="certificatetext">{{CardValidtext}}</view>
+      <image class="certicon" src="../../image/go.png" background-size="contain"></image>
+    </view>
+  </view>
+
+  <view class="contentview">
+    <!--我的快递-->
+    <view class="button" bindtap="myExpress">
+      <view class="leftbutton">
+        <image class="lefticon record" src="../../image/gift.png" background-size="contain"></image>
+        <view class="contenttext text1">我的快递</view>
+      </view>
+      <image class="righticon" src="../../image/go.png" background-size="contain"></image>
+    </view>
+    <!--地址簿-->
+    <view class="button" bindtap="address">
+      <view class="leftbutton">
+        <image class="lefticon record" src="../../image/position.png" background-size="contain"></image>
+        <view class="contenttext text2">地址簿</view>
+      </view>
+      <image class="righticon" src="../../image/go.png" background-size="contain"></image>
+    </view>
+
+    <!--优惠券-->
+    <!-- <view class="button buttonyh" bindtap="coupon">
+            <view class="leftbutton">
+                <image class="lefticon record" src="../../image/cuppon.png" background-size="contain" ></image>
+                 <view  class="contenttext text3">优惠劵</view>
+            </view>
+            <image class="righticon" src="../../image/go.png" background-size="contain" ></image>
+        </view> -->
+    <!--设置-->
+    <view class="button" bindtap="set">
+      <view class="leftbutton">
+        <image class="lefticon record" src="../../image/set.png" background-size="contain"></image>
+        <view class="contenttext text4">设置</view>
+      </view>
+      <image class="righticon" src="../../image/go.png" background-size="contain"></image>
+    </view>
+    <!--关于-->
+    <view class="button" bindtap="about">
+      <view class="leftbutton">
+        <image class="lefticon record" src="../../image/about.png" background-size="contain"></image>
+        <view class="contenttext text4">关于</view>
+      </view>
+      <image class="righticon" src="../../image/go.png" background-size="contain"></image>
+    </view>
+
+  </view>
+
+  <view class="foottext" bindtap="phonecall">
+    客服热线：021-52658180
+  </view>
+
+
+</view>

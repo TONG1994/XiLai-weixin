@@ -1,0 +1,25 @@
+<view class="box">
+  <view class="infor">根据国家最新规定，寄收快递须实名登记</view>
+  <view class="inputs">
+    <view class="inputbox">
+      <view class="inputtitle name">姓名</view>
+      <input type="text" class="input" bindinput="onnameInput" disabled="{{inputdisadle?true:false}}" placeholder="请输入姓名" value="{{Name}}" />
+    </view>
+    <view class="inputbox">
+      <view class="inputtitle">身份证号</view>
+      <input class="input" bindinput="onidInput" disabled="{{checkactive1?true:false}}" placeholder="请输入身份证号" maxlength="18" value="{{idno}}" />
+    </view>
+  </view>
+  <!-- <view class="hint {{hintshow?'hintshow':''}}">身份证格式错误</view> -->
+  <view class="checkbox {{checkactive?'active':''}}">
+    <view class="checktext">喜来快递承诺不将你的个人信息透露给任何第三方</view>
+    <button class="checkIdcard" bindtap="{{checkactive?'checkIdcard':''}}">验证</button>
+  </view>
+  <view class="alertmess {{alertshow?'active':''}}">
+    <view class="alertimage {{alert.image?'active':''}}" src="{{alert.image}}" mode="" ></view>
+    <view class="text">{{alert.text}}</view>
+  </view>
+  <view class="loading" hidden="{{loadingflag ? false : true}}">
+    <image src="../../image/loading.gif" mode="" />
+  </view>
+</view>

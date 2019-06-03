@@ -1,0 +1,15 @@
+<view class="box">
+  <view class="logintitle">喜来快递</view>
+  <view class="logintitle">欢迎你</view>
+  <view class="codebox">
+    <view class="countdown">
+      <view class="phonenum">{{phonenum}}</view>
+      <view class="count" bindtap="{{countclick?'counts':''}}">{{countdown}}</view>
+    </view>
+    <input type="number" class="input codeinput" bindinput="checkoutVerificationCode" placeholder="请输入短信验证码" maxlength="4" />
+    <button class="{{active}}" type="default" bindtap="login" disabled="{{disabled}}">{{status}}</button>
+    <view class="info">注册即表示你已阅读并同意
+      <text bindtap="rule">《用户协议及隐私政策》</text>
+    </view>
+  </view>
+</view>

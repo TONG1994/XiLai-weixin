@@ -1,0 +1,24 @@
+ <view class="index-wrap">
+    <view class="sent-wrap">
+      <form  bindsubmit="sendExpress" class="sent-btn" report-submit='true' >
+        <button form-type="submit" class="hide-button" plain="true">       
+          <view class="sent-icon"></view>
+          <view class="send">发快递</view>
+         </button>
+      </form>
+      <!-- <view class="sent-btn"  bindtap="sendExpress">
+          <view class="sent-icon"></view>
+          <view class="send">发快递</view>
+      
+      </view> -->
+    </view>
+    <view class="record-wrap" bindtap="expressRecord">
+      <image class="record" src="../../image/record.png" mode='aspectFit'></image>
+    </view>
+    
+    <view class="realName-wrap" bindtap="certificate" wx:if="{{CardValid=='true'?false:true}}">
+        <view class="realname">
+            你还未实名认证，立即认证 >>>
+        </view>
+    </view>
+</view> 

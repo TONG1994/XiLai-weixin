@@ -1,0 +1,147 @@
+<view class="box {{navbar?'navbar':''}}" >
+  <view class="expressNo">
+    <view class='toptext'>订单{{detaildata.orderstate}}</view>
+    <!-- <view>订单号：
+      <text>{{detaildata.orderNo}}</text>
+    </view>
+    <view class="status">{{detaildata.orderstate}}</view>  -->
+  </view>
+  <view class="expressMess">
+    <view class='nextFlow'>
+      <image class="companyImg" src="{{companyimg}}" mode="" />
+      <view>
+        <view>物流公司:
+          <text class="company">{{detaildata.logisticsCompanyName}}</text>
+        </view>
+        <view class='logisticFlow'>物流单号:
+          <text class="company">{{detaildata.logisticsNo}}</text>
+          <view class='backgroundImg' hover-class='backgroundImg-hover'>
+            <image src="{{copyimg}}" class='copyImgFlow' bindtap='clickCopy'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{!share}}">
+    <view class="tabs">
+      <view class="tab" bindtap="tab" wx:for="{{tabs}}" wx:key="{{item}}" data-id="{{index}}">{{item.name}}</view>
+    </view>
+    <view class="tabsline" style="transition:0.4s all ease;left:{{left}}rpx;"></view>
+  </view>
+  <view class="tabscontents">
+    <!-- <view class="tabcontent {{currentTab==index?'show':'hidden'}}" a:for="{{tabs}}">{{item.name}}</view> -->
+    <view class="tabcontent {{currentTab==0?'show':'hidden'}}">
+
+      <view class="sheetDetail">
+        <view class="li">
+          <view class="sheetCity">
+            <view class="start">{{detaildata.sendercityName}}</view>
+            <view class="cityArrow"></view>
+            <view class="destination">{{detaildata.receivecityName}}</view>
+          </view>
+        </view>
+        <view class="li">
+          <view>喜来单号:
+            <text class="sheetNo">{{detaildata.xlLogisticsNo}}</text>
+          </view>
+        </view>
+        <view class="li">
+          <view>寄件方:</view>
+          <view class="customer">
+            <view>
+              <text>{{detaildata.senderName}}</text>
+              <text>{{detaildata.senderPhone}}</text>
+            </view>
+            <view>{{detaildata.senderProvinceCityCountyNameall}}</view>
+          </view>
+        </view>
+        <view class="li">
+          <view>收件方:</view>
+          <view class="customer">
+            <view>
+              <text>{{detaildata.receiverName}}</text>
+              <text>{{detaildata.receiverPhone}}</text>
+            </view>
+            <view>{{detaildata.receiverProvinceCityCountyNameall}}</view>
+          </view>
+        </view>
+        <view class="li tables">
+          <view>物品类型:
+            <text>{{detaildata.goodsType}}</text>
+          </view>
+          <view class="tableright">运输方式:
+            <text>{{detaildata.transportTypeName}}</text>
+          </view>
+          <view class="line"></view>
+        </view>
+        <view class="li tables">
+          <view>物品重量:
+            <text>{{detaildata.goodsWeight}}{{detaildata.goodsWeight=="无"?"": (detaildata.goodsWeight=="0.5"?"公斤及以下":"公斤")}}</text>
+
+          </view>
+          <view class="tableright">付款方式:
+            <text>{{detaildata.payType=="无"?"未付款":detaildata.payType}}</text>
+          </view>
+          <view class="line"></view>
+        </view>
+        <view class="li cost">
+          <text>运费: </text>
+          <text class="costtext">{{detaildata.originalPrice}}</text>
+          <text>优惠: </text>
+          <text class="costtext">{{detaildata.couponAmount}}</text>
+          <text>实付: </text>
+          <text class="costtext">{{detaildata.payType=="无"?"0":detaildata.orderAmount}}</text>
+
+        </view>
+        <view class="li">
+          <view>收件员:
+            <text class="staffName">{{detaildata.courierName}}</text>
+            <text class="staffNo">{{detaildata.courierNo}}</text>
+          </view>
+        </view>
+        <view class="li">
+          <view>收件时间:
+            <text class="sheetNo">{{detaildata.receiverTime}}</text>
+          </view>
+        </view>
+        <view class="li">
+          <view>订单号:
+            <text class="sheetNo">{{detaildata.orderNo}}</text>
+          </view>
+        </view>
+        <view>
+          <view class="bottombackground"></view>
+          <!-- <view class="cancel {{cancelflag?'show':''}}" bindtap="cancelExpress">取消订单</view>  -->
+        </view>
+      </view>
+
+    </view>
+    <view class="tabcontent logisbg {{currentTab==1?'show':'hidden'}}">
+      <view class="logistics-No {{show?'show':''}}">暂无物流详情</view>
+      <view class="logisticsDetail  {{show?'':'show'}}" wx:for="{{logisticslist}}" wx:key="{{item}}">
+        <view class="li">
+          <view class="grayIcon {{index==0?'firstIcon':''}}"></view>
+          <view class="logsiticsPath">
+            <view class="mess">{{item.desc}}</view>
+            <view class="time">{{item.createTime}}</view>
+          </view>
+        </view>
+        <view class="line {{index==lastindex?'noline':''}}"></view>
+      </view>
+       <button open-type="share" class='share-btn' wx:if="{{!share&&showShare}}" >分享</button>
+    </view>
+
+   
+    <!-- 底部导航 -->
+    <view class='footer-nav' wx:if="{{navbar}}">
+      <view bindtap="skipHome">
+        <image src='../../image/home.png'></image>
+        <view>首页</view>
+      </view>
+      <view bindtap="skipMy" >
+        <image src='../../image/my.png'></image>
+        <view>我的</view>
+      </view>
+    </view>
+  </view>
+</view>

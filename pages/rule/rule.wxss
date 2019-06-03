@@ -1,0 +1,45 @@
+body {
+    background-color: #F7F7F7;
+    width:750rrpx;
+}
+
+.wrap {
+    padding: 0 32rpx;
+}
+
+.h1 {
+    padding: 46rpx 0 36rpx 0;
+    font-size: 40rpx;
+    color: #121212;
+    font-weight: bold;
+    text-align: center;
+}
+
+.em {
+    text-indent: 2em;
+}
+
+.h2 {
+    padding: 22rpx 0 20rpx 0;
+    font-weight: bold;
+    font-size: 34rpx;
+    display: flex;
+    align-items: center;
+}
+.blackline{
+    display: inline-block;
+    width: 13rpx;
+    height: 34rpx;
+    background: black;
+    margin: 0 20rpx 0 0;
+}
+.p {
+    margin-bottom: 30rpx;
+    font-size: 24rpx;
+    color: #545454;
+    line-height: 1.2;
+}
+.blackline{
+    width: 4px;
+    height: 
+}

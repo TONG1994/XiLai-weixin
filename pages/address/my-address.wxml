@@ -1,0 +1,64 @@
+<view class="wrapbox">
+  <view class="wrap box">
+    <view id="allHeight">
+      <view class="search-wrap" id="searchWrap">
+        <view class="search-ipt">
+          <view class="ipt-icon" bindtap="searchAddress">
+            <image src="../../image/search.png" mode="" />
+          </view>
+          <view class="ipt-wrap">
+            <input type="text" placeholder="请输入姓名、电话、地址…" bindinput="searchInput" bindconfirm="searchAddress" />
+          </view>
+        </view>
+        <view class="address-manage {{active}}" id="addressManage" bindtap="manage">
+          管理
+        </view>
+      </view>
+      <view class="tabs" id="tabsHight">
+        <view class="tab" bindtap="tab" wx:for="{{tabs}}" wx:key="{{items}}" data-id="{{index}}">{{item.name}}</view>
+      </view>
+      <view class="tabsline" style="transition:0.4s all ease;left:{{left}}rpx;"></view>
+    </view>
+    <scroll-view scroll-y="{{true}}" style="height:{{scrollViewHeight}}px;" class='scroll-view' onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <view class="tabscontents">
+        <view class="tabcontent {{currentTab==index?'show':'hidden'}}" wx:key="{{items}}" wx:for="{{tabs}}">
+          <view class="sent-address li" wx:for="{{list}}" wx:key="{{items}}">
+            <view class="content-wrap border-1px-bottom" bindtap="setaddress" data-id="{{index}}">
+              <view class="adr-wrap">
+                <view class="adr-name">{{item.name}}</view>
+                <view class="adr-phone">{{item.phone}}</view>
+              </view>
+              <view class="adr-detail">
+                {{item.done_proviceCityRegionTxt}}{{item.addrDetail}}
+              </view>
+            </view>
+            <view class="adr-edit" wx:if="{{show}}">
+              <view class="edit-btn" bindtap="editAddress" data-id="{{index}}">
+                <image class="image" src="../../image/edit.png" mode="" />
+                <text>编辑</text>
+              </view>
+              <view class="detail-btn" bindtap="deleteAddress" data-id="{{index}},{{item.uuid}}">
+                <image class="image" src="../../image/delete.png" mode="" />
+                <text>删除</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- <view class="loading" hidden="{{loadingflag ? false : true}}">
+      <image src="../../image/loading.gif" mode="" />
+    </view> -->
+
+  </view>
+  <view class="noaddress" hidden="{{noaddress ? false : true}}">
+    <image src="../../image/noaddress.png" mode="" />
+    <view class="addresstxt">您还没有添加过哦～</view>
+    <!-- <view class="addaddress" bindtap="addAddress">新增地址</view> -->
+  </view>
+  <!--新增地址-->
+  <view class="new-add-address"  bindtap="addAddress">
+    <button>新增地址</button>
+  </view>
+</view>

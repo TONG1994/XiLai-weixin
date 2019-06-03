@@ -1,0 +1,18 @@
+<view class='contentcss'>
+  <view class='searchtitle'>
+    <view class='citybutton' bindtap='changecity'>
+      <view class='citytext'>{{city}}</view>
+      <view class='down'></view>
+      <!-- <image class="down" src="../../image/down.png" mode="" /> -->
+    </view>
+
+    <view class='vertical'></view>
+    <input class='inputcss' placeholder="请输入地址" bindinput="bindInput"></input>
+  </view>
+  <scroll-view scroll-y="true">
+    <view class='listcontent' wx:for="{{tips}}" data-keywords="{{i}}" wx:for-item="i" bindtap="bindSearch" wx:key="{{i}}">
+      <image class="map" src="../../image/map.png" mode="" />
+      <view class='listtext'>{{i.name}}</view>
+    </view>
+  </scroll-view>
+</view>

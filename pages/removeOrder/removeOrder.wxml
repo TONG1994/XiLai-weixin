@@ -1,0 +1,116 @@
+<view class="box">
+  <view class="expressNo">
+    <!--订单状态  -->
+    <view class='toptext'>订单{{datas.orderstate}}</view>
+  </view>
+
+  <view class="expressBox" hidden='{{datas.orderstate=="待取件"?false:true}}'>
+    <view class="expressMesslist">
+      <view class="li" id="sentAddressBtn" >
+        <image class="couriertitle" src="{{courierdata.photo!=''?courierdata.photo:courierphoto}}" binderror='imgerror' />
+        <!-- <view class="dashline"></view> -->
+        <view class="messages">
+          <view class="mess">
+            <view class="name" id="sentAddressName">{{courierdata.userName}}</view>
+            <view class="mini">{{courierdata.orgName}}</view>
+            <!-- <view class="telephone" id="sentAddressPhone">{{datas.senderPhone}}</view> -->
+          </view>
+          <view id="sentAddressDetail" class='addressdetail'>{{courierdata.detailAddress}}</view>
+        </view>
+        <view class='courierphoneicon' bindtap='courierphone'></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="expressBox">
+    <view class="expressMesslist">
+      <view class="li" id="sentAddressBtn" bindtap="jiaddress">
+        <view class="sendtitle"></view>
+        <!-- <view class="dashline"></view> -->
+        <view class="messages">
+          <view class="mess">
+            <view class="name" id="sentAddressName">{{datas.senderName}}</view>
+            <view class="telephone" id="sentAddressPhone">{{datas.senderPhone}}</view>
+          </view>
+          <view id="sentAddressDetail" class='addressdetail'>{{datas.senderProvinceCityCountyNameall}}</view>
+          <view class="hint" hidden="{{fromhint?false:true}}">寄件人信息</view>
+        </view>
+
+        <!-- <image class="righticon" src="../../image/go.png" background-size="contain"></image> -->
+      </view>
+
+      <view class='linecenter'></view>
+
+      <view class="li" id="receiveAddressBtn" bindtap="shouaddress">
+        <view class="gettitle"></view>
+        <!-- <view class="dashline"></view> -->
+        <view class="messages">
+          <view class="mess">
+            <view class="name" id="receiveAddressName">{{datas.receiverName}}</view>
+            <view class="telephone" id="receiveAddressPhone">{{datas.receiverPhone}}</view>
+          </view>
+          <view id="receiveAddressDetail" class='addressdetail'>{{datas.receiverProvinceCityCountyNameall}}</view>
+          <view class="hint" hidden="{{deshint?false:true}}">收件人信息</view>
+
+        </view>
+        <!-- <image class="righticon" src="../../image/go.png" background-size="contain"></image> -->
+      </view>
+    </view>
+  </view>
+
+  <view class="orderdetail {{share?'share':''}}">
+    <!-- letter-spacing:70rpx; -->
+    <view class='test1 mg20'>
+      <view class='test'>订单号：</view>
+      <view>{{datas.orderNo}}</view>
+    </view>
+    <view class='test1'>
+      <view>物品类型：</view>
+      {{datas.goodsType}}
+    </view>
+    <view>物品重量：{{datas.goodsWeight}} {{datas.goodsWeight=="无"?"": (datas.goodsWeight=="0.5"?"公斤及以下":"公斤")}}</view>
+    <view>预约时间：{{datas.senddate==null?"无":""}}{{datas.senddate}} {{datas.starttime}}{{datas.senddate==null?"":"-"}}{{datas.endtime}}</view>
+    <view class='test1 mg20'>
+      <view class='test'>服务站：</view>
+      {{datas.orgName === (null||'')?'无':datas.orgName}}
+    </view>
+    <view>详细地址：  {{datas.detailAddress === null?'无':datas.detailAddress}}</view>
+    <view>联系方式： {{datas.headTelephone=== null?'无':datas.headTelephone}}</view>
+
+    <view class='line' hidden='{{datas.orderstate=="待接单"?false:true}}'></view>
+    <form  bindsubmit="cancelDetail" report-submit='true' hidden='{{datas.orderstate=="待接单"?false:true}}'>
+      <button form-type="submit" class="hide-button cancel" plain="true"> 
+       取消订单   
+      </button>
+    </form>
+  </view>
+
+  <view class="selector" wx:if="{{condition}}">
+    <view class="inner_box layui-m-anim-up">
+      <view class="header_box">
+        <view class='picktitle1'>请选择取消原因</view>
+        <view class='line'></view>
+        <view class='picktitle' bindtap='check1'>不想发了</view>
+        <view class='line'></view>
+        <view class='picktitle' bindtap='check2'>其他原因</view>
+      </view>
+      <view class="header_box">
+        <view class='picktitle' bindtap='cancel'>取消</view>
+      </view>
+
+    </view>
+    <view class="layer"></view>
+  </view>
+  <!-- 底部导航 -->
+    <view class='footer-nav' wx:if="{{share}}">
+      <view bindtap="skipHome">
+        <image src='../../image/home.png'></image>
+        <view>首页</view>
+      </view>
+      <view bindtap="skipMy" >
+        <image src='../../image/my.png'></image>
+        <view>我的</view>
+      </view>
+    </view>
+
+</view>

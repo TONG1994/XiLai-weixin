@@ -1,0 +1,437 @@
+page {
+  height: 100%;
+  background: #f2f2f2;
+}
+
+.wrap {
+  position: relative;
+  padding-top: 24rpx;
+  background: #f2f2f2;
+  width: 750rpx;
+}
+
+.message-input-wrap {
+  margin-bottom: 24rpx;
+  background: #fff;
+  position: relative;
+  z-index: 998;
+}
+
+.message-input.border-1rpx-bottom:after {
+  background-color: #f1f1f1;
+}
+
+.message-input {
+  display: flex;
+  width: 100%;
+  height: 84rpx;
+  line-height: 84rpx;
+  font-size: 0;
+}
+
+/* .message-input span {
+    display: inline-block;
+} */
+
+.message-input .tit, .message-input .add-tit {
+  margin-right: 84rpx;
+  width: 5em;
+  font-size: 28rpx;
+  color: #000;
+  text-align: left;
+}
+
+.message-input .message-w {
+  display: inline-block;
+  border: none;
+  background: none;
+  font-size: 28rpx;
+}
+
+.address-city {
+  display: inline-block;
+  font-size: 28rpx;
+  color: #d8d8d8;
+}
+
+.radio-tit {
+  font-size: 28rpx;
+  color: #000;
+  margin-right: 12rpx;
+}
+
+.message-input .radio-cont {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.adr-type-wrap {
+  display: flex;
+  align-items: center;
+  margin-right: 42rpx;
+}
+
+/*模拟radio*/
+
+.message-input input[type='radio'] {
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.message-input input[type='radio'] + label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 5rpx;
+  position: relative;
+  background-color: #000;
+  transition: background 0.2s linear;
+  box-sizing: border-box;
+}
+
+.message-input input[type='radio'] + label text {
+  display: block;
+  width: 22rpx;
+  height: 22rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/*相邻选择器来模拟选项被选择的效果*/
+
+.message-input input[type='radio'] + label {
+  border-radius: 50%;
+}
+
+.message-input input:checked[type='radio'] + label {
+  border: 1rpx #000 solid;
+  background-color: #fff;
+}
+
+.message-input input:checked[type='radio'] + label text {
+  width: 14rpx;
+  height: 14rpx;
+  background-color: #000;
+}
+
+/*智能录入*/
+
+.intellect-address-wrap {
+  margin-bottom: 22rpx;
+  padding: 28rpx 30rpx;
+  background: #fff;
+}
+
+.intellect-address-wrap .addresstitle {
+  font-size: 28rpx;
+  color: #101010;
+  line-height: 40rpx;
+}
+
+.intellect-address-describe {
+  font-size: 24rpx;
+  color: #898989;
+}
+
+.intellect-ipt {
+  padding: 18rpx 20rpx;
+  margin-bottom: 20rpx;
+  height: 204rpx;
+  width: 95%;
+  border: none;
+  border-radius: 6rpx;
+  background-color: #f9f9f9;
+  font-size: 24rpx;
+}
+
+.intellect-btn-wrap {
+  margin-bottom: 54rpx;
+  text-align: right;
+  font-size: 0;
+}
+
+.intellect-btn-wrap button {
+  display: inline-block;
+  width: 160rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  border-radius: 24rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.intellect-clear {
+  margin-right: 12rpx;
+  color: #f90d0d;
+  border: 1rpx solid #f90d0d;
+  background-color: #fff;
+}
+
+.intellect-btn {
+  color: #fff;
+  /* border: 1rpx solid #f90d0d; */
+  background: linear-gradient(to bottom right, #f24a16, #be0154);
+}
+
+.save-wrap {
+  width: 100%;
+}
+
+.save-wrap .save-btn {
+  display: block;
+  margin: 0 auto 20rpx;
+  width: 600rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  border: none;
+  border-radius: 64rpx;
+  background: #e83f57;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.message-w {
+  width: 50%;
+}
+
+.message-input .icon-address {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 100rpx;
+  font-size: 30rpx;
+  color: #4199ff;
+}
+
+.page-section {
+  background: #fff;
+  margin-bottom: 44rpx;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  padding: 25rpx 30rpx;
+}
+
+.form-row-label {
+  width: 180rpx;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+  text-align: left;
+  color: #000;
+}
+.form-row-content {
+  flex: 1;
+  height: 51rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+
+.form-row-content-ex {
+  flex: 1;
+  height: 51rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.form-line {
+  height: 1px;
+  background-color: #ddd;
+  margin-left: 30rpx;
+}
+
+.input {
+  color: #000;
+  font-size: 28rpx;
+  width: 100%;
+  padding: 4rpx 0;
+  border: 0;
+  line-height: 1;
+  padding-right:10rpx;
+
+}
+
+.a-shared-checkbox {
+  width: 18px;
+  height: 18px;
+}
+
+.map {
+  width: 34rpx;
+  height: 34rpx;
+  background-size: contain;
+}
+
+/* 三级选择 */
+
+.section {
+  padding: 30rpx 0rpx 30rpx 10rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/*选择器*/
+
+.selector {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+}
+
+.selector .inner_box {
+  position: relative;
+  z-index: 999999;
+}
+
+.selector .header_box {
+  padding: 25rpx 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #fbf9fe;
+}
+
+.selector .header_box .item {
+  float: left;
+  font-size: 34rpx;
+  color: #586c94;
+  box-sizing: border-box;
+}
+
+.selector .header_box .l {
+  width: 25%;
+  padding-left: 25rpx;
+}
+
+.selector .header_box .c {
+  width: 50%;
+  text-align: center;
+}
+
+.selector .header_box .r {
+  width: 25%;
+  text-align: right;
+  padding-right: 25rpx;
+}
+
+.selector .selected {
+  height: 90rpx;
+}
+
+.pickerview {
+  color: #898989;
+}
+
+.selector .picker_box {
+  width: 100%;
+  height: 485rpx;
+  background: #fff;
+}
+
+.selector .picker_box picker-view-column {
+  text-align: center;
+}
+
+.selector .picker_box picker-view-column view {
+  line-height: 90rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selector .layer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/*1  */
+
+.loading {
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  z-index: 1001;
+  transform: translate(-50%);
+}
+
+.loading image {
+  width: 100rpx;
+  height: 100rpx;
+  background-size: contain;
+}
+
+.dotradio {
+  display: flex;
+  align-items: center;
+}
+
+.dotradio .fromaddr, .dotradio .desaddr {
+  margin: 0 30rpx 0 0;
+  position: relative;
+}
+
+.dotradio image {
+  width: 28rpx;
+  height: 28rpx;
+  box-sizing: contain;
+  margin-right: 10rpx;
+  background-size: contain;
+  display: none;
+  position: absolute;
+  left: 0px;
+  top: 3px;
+}
+
+.dotradio image.active {
+  display: inline-block;
+}
+
+.dotradio text {
+  padding-left: 38rpx;
+}
+.goimg{
+  height: 30rpx;
+  width: 20rpx;
+}
+
+/*动画效果  */
+
+@keyframes layui-m-anim-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(800px);
+    transform: translateY(800px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.layui-m-anim-up {
+  -webkit-animation-name: layui-m-anim-up;
+  animation-name: layui-m-anim-up;
+}
+
+.inner_box {
+  pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+}

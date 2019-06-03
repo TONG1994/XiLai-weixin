@@ -1,0 +1,8 @@
+<view class="box"> 
+    <view class="logintitle">喜来快递</view>
+    <view class="logintitle">欢迎你</view>
+    <view class="inputbox">
+        <input type="number" class="input" value="{{inputValue}}" bindinput="checkoutPhone" placeholder="请输入手机号码" maxlength="11" />
+        <button class="{{active}}" type="default" bindtap="sendCode" disabled="{{disabled}}">发送验证码</button>
+    </view>
+</view>

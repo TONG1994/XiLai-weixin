@@ -1,0 +1,1 @@
+<web-view src="{{api}}/html/expressDetail/expressDetail.html"></web-view>

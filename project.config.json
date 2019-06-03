@@ -1,0 +1,52 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wxde29c4971ca28661",
+	"projectname": "%E5%BF%AB%E9%80%92%E9%80%9A",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "扫码",
+					"pathName": "pages/home/home",
+					"query": "q=https%3A%2F%2Fsmallapp-cs.xilaikd.com%2F%3Fuuid%3D128U0V5ACGEG14AI",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "remove",
+					"pathName": "pages/removeOrder/removeOrder",
+					"query": "orderUuid=131I0ONNQIKVK01D",
+					"scene": "1011"
+				}
+			]
+		}
+	}
+}

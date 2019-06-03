@@ -1,0 +1,19 @@
+<view>
+  <view class='titlecss'>
+    <view class='imgcontent'>
+      <view class='iconimg'></view>
+    </view>
+    <view class='titletext'>快递通</view>
+  </view>
+  <view class='contentcss'>
+    <view class='content' bindtap='edition'>
+      <view>版本：1.7.1</view>
+      <image src='../../image/go.png' background-size="contain" class='righticon'></image>
+    </view>
+    <view class='line'></view>
+    <view class='content' bindtap='agreement'>
+      <view>用户协议</view>
+      <image src='../../image/go.png' background-size="contain" class='righticon'></image>
+    </view>
+  </view>
+</view>

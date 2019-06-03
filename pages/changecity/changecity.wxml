@@ -1,0 +1,24 @@
+<view class='inputview' bindtap='bindButtonTap'>
+  <view class='iconsearch'></view>
+  <input placeholder="城市名/拼音" focus="{{focus}}" maxlength='10' bindinput="bindKeyInput"></input>
+</view>
+
+<view class='searchLetter' wx:if="{{hidden}}">
+  <view wx:for="{{searchLetter}}" wx:key="item" style="height:{{itemH}}rpx" data-letter="{{item.name}}" catchtouchstart='searchStart' catchtouchmove='searchMove'>
+    <!-- catchtouchend='searchEnd' -->
+    {{item.name}}
+  </view>
+</view>
+
+<scroll-view scroll-y="true" style="height:{{winHeight}}rpx" scroll-top="{{scrollTop}}" wx:if="{{hidden}}">
+  <view class='selection' wx:for="{{cityList}}" wx:key="{{item.initial}}">
+    <view class='shadows'></view>
+    <!-- <view class='item_letter'>{{item.initial}}</view> -->
+    <view class='item_letter'>{{item.initial=="★"?item.initial+" 热门城市":item.initial}}</view>
+    <view class='item_city' wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.id}}" data-code="{{ct.code}}" data-city="{{ct.city}}" bindtap="bindCity">{{ct.city}}</view>
+  </view>
+</scroll-view>
+
+<scroll-view scroll-y="true" wx:if="{{!hidden}}">
+    <view class='item_city' wx:for="{{cityList1}}" wx:for-item="ct" wx:key="{{ct.id}}" data-code="{{ct.code}}" data-city="{{ct.city}}" bindtap="bindCity">{{ct.city}}</view>
+</scroll-view>

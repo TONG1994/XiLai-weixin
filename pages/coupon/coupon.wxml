@@ -1,0 +1,2 @@
+<!--pages/coupon/coupon.wxml-->
+<web-view src="{{api}}/html/coupon/coupon.html"></web-view>

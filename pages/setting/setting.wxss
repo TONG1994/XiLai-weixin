@@ -1,0 +1,68 @@
+
+
+.box {
+    width: 750rpx;
+    height: 100%;
+    background-color: #F7F7F7;
+    position: relative;
+}
+
+.buttonapprove {
+    width: 100%;
+    height: 112rpx;
+    position: absolute;
+    top: 20rpx;
+    background-color: #FFFFFF;
+    border-top: 1rpx solid #E9E9E9;
+    border-bottom: 1rpx solid #E9E9E9;
+}
+.realnametext {
+    position: absolute;
+    top: 36rpx;
+    left: 38rpx;
+    color: #898989;
+    font-size: 32rpx;
+}
+.approvetext {
+    position: absolute;
+    top: 36rpx;
+    right: 98rpx;
+    color: #121212;
+    font-size: 32rpx;
+}
+.icon-jiantou{
+    position: absolute;
+    top: 40rpx;
+    right: 40rpx;
+    color: #C6C6C6;
+    font-weight: bold;
+    font-size: 40rpx;
+    width: 14rpx;
+    height: 24rpx;
+    background-size: contain;
+}
+
+
+.footdiv {
+    position: absolute;
+    top:900rpx;
+    height: auto;
+    width: 100%;
+}
+.buttondiv {
+    border-radius: 60rpx;
+    margin: auto 86rpx;
+    width: 600rpx;
+    height: 88rpx;
+    background-color: #E83F57;
+}
+
+.button {
+    width: 600rpx;
+    height:88rpx;
+    line-height: 88rpx;
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-size: 32rpx;
+}

@@ -1,0 +1,332 @@
+.box {
+  background: #f2f2f2;
+  width: 750rpx;
+}
+.box.navbar{
+  padding-bottom: 100rpx;
+}
+
+.expressMess {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx 0 34rpx 50rpx;
+  margin: 25rpx 0 20rpx 0;
+  background: #fff;
+  font-size: 28rpx;
+}
+
+.expressMess .nextFlow{
+  display: flex;
+  align-items: center;
+}
+ .logisticFlow{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nextFlow .companyImg {
+  width: 74rpx;
+  height: 74rpx;
+  margin: 0 22rpx 0 0;
+  background-size: contain;
+}
+.backgroundImg{
+  padding: 10rpx;
+  margin-left: 40rpx;
+}
+.backgroudImg-hover{
+  background-color: forestgreen;
+}
+
+.copyImgFlow{
+  display: flex;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.backgroundImg-hover{
+  background-color: #e6e6e6
+}
+
+.box .expressNo {
+  align-items: center;
+  height: 132rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  color: #fff;
+  background-image: url('data:image/png;base64,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');
+}
+
+.box .expressNo .toptext {
+  margin-left: 80rpx;
+}
+
+.box .expressNo .status {
+  margin: 0 26rpx 0 0;
+}
+
+.box .tabs {
+  background: #fff;
+  width: 750rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  color: #121212;
+  font-size: 32rpx;
+  display: flex;
+}
+
+.box .tabs .tab {
+  width: 375rpx;
+  text-align: center;
+}
+
+.box .tabsline {
+  position: relative;
+  left: 0rpx;
+  width: 375rpx;
+  height: 2rpx;
+  background: #f45322;
+  margin: 0 0 16rpx 0;
+  transition: 0.4s all ease;
+}
+
+.box .tabscontents .tabcontent {
+  display: none;
+}
+
+.box .tabscontents .tabcontent.show {
+  display: block;
+}
+
+.box .logisbg {
+  background: white;
+  padding-bottom: 100rpx;
+}
+
+.box .tabscontents .tabcontent.hidden {
+  display: none;
+}
+
+/* 运单详情 */
+
+.sheetDetail {
+  background: #fff;
+}
+
+.sheetDetail .li {
+  padding: 16rpx 50rpx;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 28rpx;
+}
+
+.sheetDetail .li:last-child {
+  border: none;
+}
+
+.sheetCity {
+  display: flex;
+  justify-content: center;
+  padding: 6rpx 0;
+  font-size: 48rpx;
+}
+
+.cityArrow {
+  width: 44rpx;
+  height: 12rpx;
+  margin: 22rpx 26rpx;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAMCAYAAAAZKF83AAAA0UlEQVRIS9XSwUoCQRwH4G8P4qEn0hfoCSrvgQSBhwiiF+gFPAThsYMX7546dgk6CBEEPYOEqOGlGFhhWWR113RyjjPz/80H80vsf93gAeMqTydVhracuUMLZ3gpmxUDfIwhFrhGtww6BvgorUMthQ5wjq9N4DHAwfWMRgb4iVO8rkPHAoce3+Zw37jCfRE6FnjZ41W2PtqYrDoM4Kd137CD8zqaBbkfOMEofyeAf3YA+ovIOTroZcP+M3jpfMQFpmHjEMDB+Z5W5O1QwAE9w+Uvu5UhbSwi6MMAAAAASUVORK5CYII=);
+}
+
+.sheetDetail .li .customer {
+  font-size: 24rpx;
+}
+
+.sheetDetail .li .customer span {
+  margin: 0 8rpx 0 0;
+}
+
+.sheetDetail .li.tables {
+  display: flex;
+  position: relative;
+}
+
+.sheetDetail .li.tables .tableright {
+  position: absolute;
+  left: 56%;
+}
+
+.sheetDetail .li.tables .line {
+  width: 3rpx;
+  height: 100%;
+  background: #e5e5e5;
+  position: absolute;
+  z-index: 100;
+  top: 0rpx;
+  left: 50%;
+  margin-left: -1rpx;
+}
+
+.sheetDetail .li.tables .table {
+  width: 372rpx;
+}
+
+.sheetDetail .li.cost span:nth-child(even) {
+  margin: 0 20rpx 0 0;
+}
+
+.sheetDetail .li .staffName {
+  margin: 0 8rpx 0 0;
+}
+
+.costtext {
+  margin: 0 30rpx 0 0;
+}
+
+/* 物流详情 */
+
+.logisticsDetail {
+  padding: 40rpx 0 32rpx 0rpx;
+  background: #fff;
+  display: none;
+  margin: 0 0 0 70rpx;
+}
+
+.logisticsDetail.show {
+  display: block;
+  position: relative;
+}
+
+/* .logisticsDetail .li{
+    margin:0 0 46rpx 0;
+} */
+
+.logisticsDetail .li .logsiticsPath .mess {
+  color: #7a7a7a;
+  font-size: 24rpx;
+  margin: 0 0 10rpx 0;
+  line-height: 40rpx;
+}
+
+.logisticsDetail .li .logsiticsPath .time {
+  color: #afafaf;
+  font-size: 22rpx;
+}
+
+.logisticsDetail .li {
+  position: relative;
+  display: flex;
+  padding: 0 0 0 38rpx;
+  width: 85%;
+  flex-wrap: wrap;
+}
+
+.logisticsDetail .line {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background-color: #e5e5e5;
+  width: 3rpx;
+  left: 0;
+  top: 60rpx;
+  bottom: -56rpx;
+  height: 100%;
+}
+
+.logisticsDetail  .line.noline {
+  display: none;
+}
+
+.grayIcon {
+  position: absolute;
+  z-index: 100;
+  left: -8rpx;
+  top: 10rpx;
+  width: 18rpx;
+  height: 18rpx;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABW0lEQVQ4T62UT0rDQBjF35dQKS0KhWQXXHTRTSWeIRnceICewI2goHgOUVBw4wlyADcyyRkMdpNFFtJdBgqWhmBJRiaaYqWBQjLrNz/e974/hJYebeP4vj+WUp4BOCGiQ6WRUn4AeCWiZ9d1p///bYA8z9szTfO2KIpzAHqN2VzTtKckSW4mk8lXpVmDFMQwjBcpJSMiGIaBwWCAbrdbarMsw3w+hxBCuQMRcSHEaQVbg4IgeCiK4qLT6WA4HKLX6201lKYp4jjGarWCpmmPjuNcKmEJ+s3kjYj00WhUC6nIChZFkXKWE9GxyqwEcc7vAFyZpgnLsnbq42w2Q5IkSnvPGLuuQO8AxspNv9/fCbRcLktXAKaMsaOqtE8p5b5t29D1umZt8vM8RxiGKvSF67oHjUEAFoyxHxDnvJ3SWgu7tfar8loZSAVqbUUqWOOl/Tsljc/ITiNdI/oGqVDyEwWj1q0AAAAASUVORK5CYII=);
+  display: inline-block;
+}
+
+.grayIcon.firstIcon {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABVklEQVQ4T62UMWoCQRiF3+9kd5vdaQULL2AgVoJ1SJPCK9ikURKI5AJ7gZBAgjZpvIJFmpBasDIQL2Ah2M5us7tZ/zCjKyYoCrtTv/l48/7/DaGgQ/s4kevWCLhhoisCqlrDwJyYPxh4c8Jw9v/eHxADdiLlIzN3AIgDZlMiGlhKPRAQZ5otaAN5Z+ZLCIFSowFRr4PKZaPl5RLpdIrVZAKkKYjo01LqOoNtQbGUL8x8CylhtdugSmWvIV4skAyHgFIa9mordaeFBqQzAdEXhBBWt3sQkpENrN/XzlIwX+jMDCh23Scmui81mzhrtU6a489ohNV4DGJ+tsOwt3bked8AalanA6qaIR09PJ8jGQy0buYEwfnakecpBjzb9wHHOQoxgihC7Ps6m8AOApkbBCBwMlBxTyss7KLGbwIvYiE3pdQ9y1+RHVi+0u4uT+5v5LRN3K/6BXdJ4BPPgoUtAAAAAElFTkSuQmCC);
+}
+
+.cancel {
+  background: #fff;
+  margin: 16rpx 0 70rpx 526rpx;
+  font-size: 28rpx;
+  color: #4a4a4a;
+  border-radius: 100rpx;
+  width: 180rpx;
+  height: 60rpx;
+  border: 3rpx solid #e6e6e6;
+  text-align: center;
+  line-height: 58rpx;
+  display: none;
+}
+
+.cancel.show {
+  display: block;
+}
+.bottombackground{
+  background-color: #F7F7F7;
+  height: 54rpx;
+}
+.logistics-No {
+  font-size: 40rpx;
+  text-align: center;
+  display: none;
+  line-height: 150rpx;
+  background: #fff;
+}
+
+.logistics-No.show {
+  display: block;
+}
+
+.footer-nav{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0 0 10rpx 0 rgba(155,143,143,0.6);
+  z-index: 9999;
+
+}
+.footer-nav>view{
+  width: 50%;
+  text-align: center;
+  font-size:28rpx;
+}
+.footer-nav image{
+  display: block;
+  margin: 0 auto;
+  width: 55rpx;
+  height: 55rpx;
+}
+.share-btn{
+  display: inline-block;
+  width:120rpx;
+  height:44rpx;
+  line-height: 44rpx;
+  color: #E83F57;
+  border: 1rpx solid #E83F57;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 110rpx;
+}

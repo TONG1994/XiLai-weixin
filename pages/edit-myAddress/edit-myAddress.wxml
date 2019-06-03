@@ -1,0 +1,105 @@
+<view>
+  <view class="wrap">
+    <view class="message-input-wrap">
+      <view class="page">
+        <form bindsubmit="onSubmit" bindreset="onReset">
+
+          <view class="form-row">
+            <view class="form-row-label">地址类型</view>
+            <view class="form-row-content dotradio">
+              <view class="fromaddr" bindtap="radiofromclick">
+                <image class="{{addrType==2?'active':''}}" src="../../image/dotactive.png" mode="" />
+                <image class="{{addrType==1?'active':''}}" src="../../image/dot.png" mode="" />
+                <text>收件地址</text>
+              </view>
+              <view class="desaddr" bindtap="radiodesclick">
+                <image class="{{addrType==1?'active':''}}" src="../../image/dotactive.png" mode="" />
+                <image class="{{addrType==2?'active':''}}" src="../../image/dot.png" mode="" />
+                <text>发件地址</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- 地址簿修改 -->
+          <view class="form-line" />
+
+          <view class="page-section">
+            <view class="form-row">
+              <view class="form-row-label">姓名</view>
+              <view class="form-row-content">
+                <input bindinput="nameInput" name="input" class="input" maxlength='10' value='{{address_name}}' />
+              </view>
+            </view>
+
+            <view class="form-line" />
+
+            <view class="form-row">
+              <view class="form-row-label">联系方式</view>
+              <view class="form-row-content">
+                <input bindinput="phoneInput" name="input" class="input" type="number" value='{{address_phone}}' />
+              </view>
+            </view>
+
+            <view class="form-line" />
+
+            <!-- 地址簿修改 -->
+
+
+            <view class="form-row" bindtap="open">
+              <view class="form-row-label">所在区域</view>
+              <view class="form-row-content">
+                <view class="picker">
+                  <view>{{citydistrict==undefined?"请选择所在区域":citydistrict}}</view>
+                </view>
+                <!-- <image src="../../image/go.png" class='goimg'></image> -->
+              </view>
+            </view>
+            <view class="form-line" />
+
+            <view class="form-row">
+              <view class="form-row-label">详细地址</view>
+              <view class="form-row-content">
+                <input class="input" maxlength='50' value='{{srlocation}}' bindinput="addressInput" />
+              </view>
+              <!-- <image class="map" src="../../image/map.png" mode="" /> -->
+            </view>
+
+          </view>
+
+        </form>
+      </view>
+    </view>
+    <view class="save-wrap">
+      <button type="default" class="save-btn" bindtap="saveaddress"> 保存 </button>
+    </view>
+
+    <view id="container" style="display: none"></view>
+  </view>
+  <view class="loading" hidden="{{loadingflag ? false : true}}">
+    <image src="../../image/loading.gif" mode="" />
+  </view>
+
+  <view wx:if="{{condition}}" class="selector">
+    <view class="inner_box layui-m-anim-up">
+      <view class="header_box">
+        <view class="item l" data-act="cancel" data-mold="city" bindtap="cancel">取消</view>
+        <view class="item c">请选择</view>
+        <view class="item r" data-act="confirm" data-mold="city" bindtap="confirm">确定</view>
+      </view>
+
+      <picker-view class="picker_box" indicator-class="selected" value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+          <view wx:for="{{provinces}}" wx:key="{{item}}">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{citys}}" wx:key="{{item}}">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{countys}}" wx:key="{{item}}">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+    <view class="layer"></view>
+  </view>
+
+</view>

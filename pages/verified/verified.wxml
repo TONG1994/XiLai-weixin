@@ -1,0 +1,13 @@
+<view class="box">
+
+  <view class="infor">根据国家最新规定，寄收快递须实名登记，请选择以下任意一种实名认证</view>
+  
+  <view class="record-wrap" bindtap="toPhoto" >
+      <image class="record"  src="../../image/camera.png" mode='aspectFit'></image> 
+      <view class='word'>请拍身份证正面</view>
+  </view>
+  <view class="record-wrap" bindtap="toFill" >
+        <image class="record"  src="../../image/edits.png" mode='aspectFit'></image>
+        <view class='word'>请填写实名信息</view>
+  </view>
+</view>

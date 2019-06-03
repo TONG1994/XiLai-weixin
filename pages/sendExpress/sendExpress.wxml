@@ -1,0 +1,256 @@
+
+<wxs module="filter" src="./sendExpress.wxs"></wxs>
+<view class="box">
+  <view class="senderbox" hidden="{{flag?false:true}}">
+      <image class="senderImage" src="{{courierdata.photo}}" binderror="imgerror" background-size="contain" ></image>
+      <view class="senderMessage">
+          <view class="mess">
+              <view class="name">{{courierdata.userName}}</view>
+              <view class="servicestation" id="sentAddressPhone">{{courierdata.orgName}}</view>
+          </view>
+          <view class="senderAddress">{{courierdata.detailAddress}}</view>
+      </view>
+      <image bindtap="callsender" class="senderphone" src="../../image/phone.png" background-size="contain" ></image>
+  </view>
+  <view class="expressBox">
+    <view class="expressMesslist">
+      <form  bindsubmit="jiaddress" report-submit='true' id="sentAddressBtn" >
+        <button form-type="submit" class="hide-button" plain="true">   
+        <view class="li">  
+          <view class="sendtitle"></view>
+          <view class="messages">
+            <view class="mess">
+              <view class="name" id="sentAddressName">{{fromAddress.name}}</view>
+              <view class="telephone" id="sentAddressPhone">{{fromAddress.phone}}</view>
+            </view>
+            <view id="sentAddressDetail" class='addressdetail'>{{fromAddress.fromaddressDetail}}</view>
+            <view class='addressError' hidden="{{fromAddressEnable}}" >抱歉，该寄件地址不在服务范围内</view>
+            <view class="hint" hidden="{{fromhint?false:true}}">寄件人信息</view>
+          </view>
+          <image class="righticon" src="../../image/go.png" background-size="contain"></image>
+        </view>  
+        </button>
+      </form>
+
+      <view class='linecenter'></view>
+       <form  bindsubmit="shouaddress" report-submit='true' id="receiveAddressBtn" >
+        <button form-type="submit" class="hide-button" plain="true">   
+          <view class="li">  
+            <view class="gettitle"></view>
+            <view class="messages">
+              <view class="mess">
+                <view class="name" id="receiveAddressName">{{desAddress.name}}</view>
+                <view class="telephone" id="receiveAddressPhone">{{desAddress.phone}}</view>
+              </view>
+              <view id="receiveAddressDetail" class='addressdetail'>{{desAddress.desaddressDetail}}</view>
+              <view class='addressError' hidden="{{destAddressEnable}}" >抱歉，该收件地址不在服务范围内</view>
+              <view class="hint" hidden="{{deshint?false:true}}">收件人信息</view>
+
+            </view>
+            <image class="righticon" src="../../image/go.png" background-size="contain"></image>
+          </view>  
+        </button>
+      </form>
+    </view>
+  </view>
+
+  <view class='form-list'>
+    <!-- <form  bindsubmit="itemtype" report-submit='true' >
+      <button form-type="submit" class="hide-button" plain="true"> 
+        <view class='test'>
+          <view class='form-row'>物品类型</view>
+          <view class='form-row-content'>{{itemtype}}</view>
+          <image class="righticon-row" src="../../image/go.png" background-size="contain"></image>
+        </view>     
+      </button>
+    </form> -->
+
+
+    <view class="form-line" />
+    <form  bindsubmit="newitemtype" report-submit='true' >
+      <button form-type="submit" class="hide-button" plain="true"> 
+        <view class='test'>
+          <view class='form-row'>物品类型</view>
+          <view class='form-row-content'>{{newitemtype}}</view>
+          <image class="righticon-row" src="../../image/go.png" background-size="contain"></image>
+        </view>     
+      </button>
+    </form>
+
+
+    <view class="form-line" />
+    <form  bindsubmit="itemweight" report-submit='true' >
+      <button form-type="submit" class="hide-button" plain="true"> 
+        <view class='test'>
+          <view class='form-row'>物品重量（公斤）</view>
+          <view class='form-row-content'>{{weights}} {{weights=="0.5"?"公斤及以下":"公斤"}}</view>
+          <image class="righticon-row" src="../../image/go.png" background-size="contain"></image>
+        </view>     
+      </button>
+    </form>
+    <view class="form-line" />
+    <form  bindsubmit="scheduletime" report-submit='true' >
+      <button form-type="submit" class="hide-button" plain="true"> 
+        <view class='test'>
+          <view class='form-row'>预约时间</view>
+          <view class='form-row-content'>{{date}} {{hour}}</view>
+          <image class="righticon-row" src="../../image/go.png" background-size="contain"></image>
+        </view>     
+      </button>
+    </form>
+
+    <view class="form-bootm-line"/>
+    <form  bindsubmit="serviceStation" report-submit='true' hidden='{{showorgName?false:true}}'>
+      <button form-type="submit" class="hide-button" plain="true"> 
+        <view class='test'>
+          <view class='form-row'>服务站</view>
+          <view class='form-row-content'>{{servicesStation.orgName}}</view>
+          <image class="righticon-row" src="../../image/go.png" background-size="contain" wx:if="{{arrowFlag}}"></image>
+        </view>     
+      </button>
+    </form>
+  </view>
+
+  <view class="footdiv {{showorgName?'':'footmargin'}}">
+    <checkbox-group bindchange="onChange" class="checkbox">
+      <label>
+        <checkbox value="{{checkStatus}}" class="check" disabled="{{!destAddressEnable || !fromAddressEnable}}"/>
+        <text class="checkbox-text">我愿意遵守</text>
+      </label>
+      <text class="blue" bindtap="{{ruleclick?'rule':''}}">《用户协议及隐私政策》</text>
+    </checkbox-group>
+    
+     <form  bindsubmit="{{checkStatus=='true'?'sendExpress':''}}" report-submit='true'>
+      <view class="buttonbox">
+        <button form-type="submit" plain="true" class="hide-button button {{checkStatus=='true'?'red':''}}">立即下单</button>
+      </view>
+    </form>
+  
+  </view>
+  <view class="loading" hidden="{{loadingflag ? false : true}}">
+    <image src="../../image/loading.gif" mode="" />
+  </view>
+
+  <!--物品类型  -->
+  <view class="selector" wx:if="{{condition}}">
+    <view class="inner_box layui-m-anim-up">
+      <view class="header_box">
+        <view class="item l" data-act="cancel" data-mold="city" bindtap="cancel">取消</view>
+        <view class="item c">请选择</view>
+        <view class="item r" data-act="confirm" data-mold="city" bindtap="confirm">确定</view>
+      </view>
+      <picker-view class="picker_box" indicator-class="selected" value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+          <view wx:for="{{itemtypes}}" wx:key="{{item}}" id='{{item.id}}'>{{item.type}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+    <view class="layer"></view>
+  </view>
+
+  <!--物品重量  -->
+  <view class="selector" wx:if="{{condition1}}">
+    <view class="inner_box layui-m-anim-up">
+      <view class="header_box">
+        <view class="item l" data-act="cancel" data-mold="city" bindtap="cancel1">取消</view>
+        <view class="item c">请选择</view>
+        <view class="item r" data-act="confirm" data-mold="city" bindtap="confirm1">确定</view>
+      </view>
+      <picker-view class="picker_box" indicator-class="selected" value="{{value}}" bindchange="bindChange1">
+        <picker-view-column>
+          <view wx:for="{{itemweights}}" wx:key="{{item}}">{{item}}{{item=="0.5"?"公斤及以下":"公斤"}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+    <view class="layer"></view>
+  </view>
+
+  <!--预约时间  -->
+  <view class="selector" wx:if="{{condition2}}">
+    <view class="inner_box layui-m-anim-up">
+      <view class="header_box">
+        <view class="item l" data-act="cancel" data-mold="city" bindtap="cancel2">取消</view>
+        <view class="item c">请选择</view>
+        <view class="item r" data-act="confirm" data-mold="city" bindtap="confirm2">确定</view>
+      </view>
+      <view class="picker_box" value="{{value}}" bindchange="bindChange2">
+        <view class='testdiv'>
+          <button plain='ture' class="buttondiv {{data==todaydate?'active':''}}" bindtap='todaycheck'>
+            今天
+            <view class='datesize'>{{todaydate}}</view>
+          </button>
+          <button plain='ture' class="buttondiv {{data==tomorrowdate?'active':''}}" bindtap='tomorrowcheck'>
+            明天
+            <view class='datesize'>{{tomorrowdate}}</view>
+          </button>
+          <button plain='ture' class="buttondiv {{data==aftertomorrowdate?'active':''}}" bindtap='aftertomorrowcheck'>
+            后天
+            <view class='datesize'>{{aftertomorrowdate}}</view>
+          </button>
+        </view>
+        <view class='testdiv'>
+          <button plain="false" wx:for='{{hours}}' wx:key="{{item}}" class="buttondiv {{hourid==item.id||hour1==item.id?' active1':''}}" bindtap='checkhours' id='{{item.id}}' disabled="{{data==todaydate?(item.id-todayhour>2?false:true):false}}">
+            <view class='datesize'>{{item.time}}</view>
+          </button>
+          <button plain='ture' class='buttondiv1'>
+          </button>
+        </view>
+      </view>
+    </view>
+    <view class="layer"></view>
+  </view>
+
+<!--服务站点 -->
+ <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+      <view class="zan-dialog__container">
+       <view class='zan-dialog-header_box'>
+          <view class='left'></view>
+          <view class='center'>请选择</view>
+          <view class='right' bindtap='toggleDialog'>取消</view>
+       </view>
+       <view class='zan-dialog-content'>
+        <view class='service-station' wx:for="{{servereStationList}}" wx:key="{{item}}" data-id="{{index}}">
+        <view class='content-item-container'> 
+          <view class='content-item' bindtap='clickServiceStation' data-item="{{item}}">
+            <view class="item-left">
+              <view class="servicetitle"></view>
+            </view>
+            <view class="item-right">
+              <view class="item-right-top">
+                <view class='service-name'>{{item.orgName}}</view>
+                <view class='service-phone'>{{item.headTelephone}}</view>
+              </view>
+              <view class='service-address'>{{item.detailAddress}}</view>
+              <view class='service-address'>
+                <view wx:if="{{item.area >= 1000}}">{{filter.numberToFixed(item.area)}}km</view>
+                <view wx:if="{{item.area < 1000}}">{{item.area}}m</view>
+              </view>
+            </view>
+          </view>
+         <view class='service-bootm-line'></view>
+        </view>
+       </view>
+       </view>
+    </view>
+  </view>
+
+<!--新物品类型  -->
+  <view class="selector" wx:if="{{condition4}}">
+    <view class="inner_box layui-m-anim-up">
+      <view class="header_box">
+        <view class="item l" data-act="cancel" data-mold="city" bindtap="cancel4">取消</view>
+        <view class="item c">请选择</view>
+        <view class="item r" data-act="confirm" data-mold="city" bindtap="confirm4">确定</view>
+      </view>
+      <view class="picker_box pickerbox">
+        <view class='testdiv'>
+          <view class="newtype {{newtypeflag==item.id?'active2':''}}" bindtap="chooseGoods" wx:for="{{itemtypes}}" wx:key="{{item}}" id='{{item.id}}'>{{item.type}}</view>
+        </view>
+        <input class="goodsinput {{inputshow?'':'inputshow'}}" maxlength="5" value="{{goodsinputvalue}}" bindinput="bindKeyInput" placeholder="请输入物品类型" />
+      </view>
+    </view>
+    <view class="layer"></view>
+  </view>
+
+</view>

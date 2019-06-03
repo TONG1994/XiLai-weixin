@@ -1,0 +1,101 @@
+.box {
+  width: 100%;
+  height: 100%;
+}
+
+.loginMessage {
+  display: flex;
+  width: 690rpx;
+  height: 186rpx;
+  padding: 0 0 0 60rpx;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  margin: 0 0 020rpx 0;
+}
+
+.loginMessage .login {
+  display: flex;
+  align-items: center;
+}
+
+.loginMessage .login .avator {
+  width: 104rpx;
+  height: 104rpx;
+  margin: 0 20rpx 0 0;
+}
+
+.certificate {
+  display: flex;
+  align-items: center;
+}
+
+.certificate .certificatetext {
+  margin: 0 32rpx 0 0;
+  color: #9b9b9b;
+}
+
+.certificate .certicon {
+  width: 14rpx;
+  height: 24rpx;
+  margin: 0 58rpx 0 0;
+}
+
+.contentview {
+  background: #fff;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 708rpx;
+  height: 102rpx;
+  margin: 0 0 0 42rpx;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.button .leftbutton {
+  display: flex;
+}
+
+.button .lefticon {
+  align-self: left;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.button .contenttext {
+  margin: 0 0 0 20rpx;
+  line-height: 44rpx;
+}
+
+.button .righticon {
+  margin: 0 58rpx 0 0;
+  width: 14rpx;
+  height: 24rpx;
+}
+
+.foottext {
+  position: absolute;
+  bottom: 40rpx;
+  font-size: 28rpx;
+  margin: auto 187rpx;
+  color: #aeaeae;
+}
+
+.text1 {
+  letter-spacing: 1rpx;
+}
+
+.text2 {
+  letter-spacing: 20rpx;
+}
+
+.text3 {
+  letter-spacing: 20rpx;
+}
+
+.text4 {
+  letter-spacing: 70rpx;
+}

@@ -1,0 +1,58 @@
+<view>
+  <view class="box">
+    <view class="tabs">
+      <view class="tab" bindtap="tab" wx:for="{{tabs}}" data-id="{{index}}">{{item.name}}</view>
+    </view>
+    <view class="tabsline" style="transition:0.4s all ease;left:{{left}}rpx;"></view>
+    <scroll-view scroll-y="{{true}}" style="height:1100rpx;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <view class="tabscontents">
+        <!-- <view class="tabcontent {{currentTab==index?'show':'hidden'}}" a:for="{{tabs}}">{{item.name}}</view> -->
+        <view class="tabcontent {{currentTab==index?'show':'hidden'}}" wx:for="{{tabs}}">
+          <view class="expressbox" bindtap="goDetail" wx:for="{{list}}" data-id="{{index}}" id='{{item.testid}}'>
+            <view class="expressNo">
+              <text>订单号:</text>
+              <text>{{item.orderNo}}</text>
+              <text class='status1'>{{item.orderstate}}</text>
+            </view>
+             <view class='line'></view>
+            <view class="fromto">
+              <view class="cityboxfrom">
+                <view class="from">
+                  <view class="city">{{item.sendercityName}}</view>
+                  <view class="name">{{item.senderName}}</view>
+                </view>
+              </view>
+              <view class="status">
+                <view class='test1'></view>
+                <!--订单状态  -->
+                <!-- {{item.orderstate}} -->
+                <!-- <view class='lineleft'>
+                </view>
+                <view class='test'>
+                
+                </view>
+                <view class='lineright'></view> -->
+              </view>
+              <view class="cityboxto">
+                <view class="to">
+                  <view class="city">{{item.receivecityName}}</view>
+                  <view class="name">{{item.receiverName}}</view>
+                </view>
+              </view>
+            </view>
+            <view class="expressTime">下单时间：
+              <text>{{item.createTime}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="loading" hidden="{{loadingflag ? false : true}}">
+    <image src="../../image/loading.gif" mode="" />
+  </view>
+  <view class="noaddress" hidden="{{noaddress ? false : true}}">
+    <image src="../../image/noexpress.png" mode="" />
+    <view class="addresstxt">目前没有这个记录哦～</view>
+  </view>
+</view>
